@@ -92,3 +92,39 @@ Manipular lux e presenca no simulador:
 ## 9. Encerramento
 
 Reforcar que a demonstracao nao depende de app no celular. A forma recomendada e usar os scripts npm do projeto; `npx` e Docker/Mosquitto ficam como alternativas.
+
+## 10. Dashboard Streamlit v0.3
+
+Abrir tres elementos:
+
+- collector rodando no terminal;
+- Wokwi rodando no VS Code;
+- dashboard Streamlit aberto.
+
+Rodar o dashboard:
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run apps\dashboard\app.py
+```
+
+Mostrar a pagina inicial com as contagens do TinyDB.
+
+Na pagina Commands, clicar:
+
+- `Light on`;
+- `Light off`;
+- `Mode auto`.
+
+Explicar que o Streamlit publica comandos no broker MQTT, mas quem grava no TinyDB e o collector.
+
+No Wokwi:
+
+- alterar lux;
+- acionar presenca no PIR;
+- mostrar o LED respondendo ao modo automatico.
+
+No dashboard:
+
+- voltar ao Live Monitor;
+- mostrar lux, presence, light_condition, control_mode e lamp_state;
+- mostrar events/status/commands atualizados quando houver mensagens coletadas.
