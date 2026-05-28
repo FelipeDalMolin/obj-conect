@@ -1,0 +1,18 @@
+{
+  "name": "obj-conect",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ferramentas MQTT para demonstrar o ESP32 simulado no Wokwi.",
+  "scripts": {
+    "mqtt:sub:device": "mqtt sub -h broker.hivemq.com -p 1883 -t \"mackenzie/iot/v1/campus01/lab01/lighting/esp32_01/#\" -v",
+    "mqtt:pub:status": "mqtt pub -h broker.hivemq.com -p 1883 -t \"mackenzie/iot/v1/campus01/lab01/lighting/esp32_01/commands\" -m \"status\"",
+    "mqtt:pub:light:on": "mqtt pub -h broker.hivemq.com -p 1883 -t \"mackenzie/iot/v1/campus01/lab01/lighting/esp32_01/commands\" -m \"light:on\"",
+    "mqtt:pub:light:off": "mqtt pub -h broker.hivemq.com -p 1883 -t \"mackenzie/iot/v1/campus01/lab01/lighting/esp32_01/commands\" -m \"light:off\"",
+    "mqtt:pub:mode:auto": "mqtt pub -h broker.hivemq.com -p 1883 -t \"mackenzie/iot/v1/campus01/lab01/lighting/esp32_01/commands\" -m \"mode:auto\"",
+    "mqtt:sub:lab-lighting": "mqtt sub -h broker.hivemq.com -p 1883 -t \"mackenzie/iot/v1/campus01/lab01/lighting/+/#\" -v",
+    "mqtt:sub:lab": "mqtt sub -h broker.hivemq.com -p 1883 -t \"mackenzie/iot/v1/campus01/lab01/#\" -v"
+  },
+  "devDependencies": {
+    "mqtt": "^5.14.1"
+  }
+}
