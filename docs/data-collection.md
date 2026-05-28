@@ -61,12 +61,31 @@ O collector valida exatamente 8 segmentos:
 
 Se o topico nao bater com esse formato, a mensagem e salva apenas em `raw_messages` e o processo continua.
 
-Se o payload nao for JSON valido, a mensagem tambem e preservada com:
+Para `telemetry`, `events` e `status`, o collector exige JSON valido. Se o payload nao for JSON valido, a mensagem e preservada com:
 
 - `payload_valid=false`
 - `payload_raw`
 - `payload_error`
 - `received_at`
+
+Para `commands`, o collector aceita JSON valido ou comandos em texto simples. Os comandos texto reconhecidos sao normalizados:
+
+- `status` vira `{"command": "status"}`
+- `light:on` vira `{"command": "set_light", "state": "on"}`
+- `light:off` vira `{"command": "set_light", "state": "off"}`
+- `mode:auto` vira `{"command": "set_mode", "mode": "auto"}`
+
+Comandos texto reconhecidos ficam com:
+
+- `payload_valid=true`
+- `payload_format=text_command`
+- `payload_raw` com o texto original
+
+Comandos texto desconhecidos em `commands` ficam com:
+
+- `payload_valid=false`
+- `payload_error=invalid_command`
+- `payload_raw` com o texto original
 
 O timestamp `received_at` e salvo em ISO-8601 UTC, por exemplo:
 
@@ -114,6 +133,7 @@ Cada documento salvo nas tabelas de canal contem:
 - `channel`
 - `payload`
 - `payload_valid`
+- `payload_format`
 - `schema_version`
 
 A tabela `telemetry` serve como base para graficos de serie temporal com `lux`, `presence`, `light_condition`, `control_mode` e `lamp_state`.
