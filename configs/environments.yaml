@@ -1,0 +1,9 @@
+active_environment: local
+
+environments:
+  - name: local
+    data_db: data/local/iot_data.json
+    config_db: data/local/iot_config.json
+    raw_dir: data/raw
+    exports_dir: data/exports
+    timezone: UTC

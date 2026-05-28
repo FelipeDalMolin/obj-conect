@@ -1,0 +1,12 @@
+devices:
+  - device_id: esp32_01
+    site: campus01
+    area: lab01
+    domain: lighting
+    source: wokwi
+    description: ESP32 simulated lighting controller
+    channels:
+      - telemetry
+      - events
+      - status
+      - commands

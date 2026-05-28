@@ -1,0 +1,12 @@
+mqtt:
+  broker:
+    name: HiveMQ Public Broker
+    host: broker.hivemq.com
+    port: 1883
+  client:
+    client_id: obj-conect-collector
+    keepalive: 60
+    qos: 0
+  topics:
+    subscribe: mackenzie/iot/v1/campus01/lab01/lighting/+/+
+    debug: mackenzie/iot/v1/campus01/lab01/lighting/+/#

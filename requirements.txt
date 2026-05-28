@@ -1,0 +1,7 @@
+paho-mqtt
+tinydb
+pyyaml
+python-dotenv
+pandas
+streamlit
+plotly

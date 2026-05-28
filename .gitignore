@@ -4,3 +4,10 @@
 .vscode/launch.json
 .vscode/ipch
 node_modules/
+.venv/
+.env
+data/local/*.json
+data/raw/*.ndjson
+data/exports/*.csv
+__pycache__/
+*.pyc
