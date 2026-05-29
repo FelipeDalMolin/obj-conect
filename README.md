@@ -914,6 +914,12 @@ docs/dashboard.md
 Explica o dashboard Streamlit, páginas, polling leve e comandos via interface.
 
 ```text
+docs/testes-resultados-mqtt.md
+```
+
+Documenta os testes MQTT, metodologia de medição, tabela de resultados, diagramas e capturas recomendadas.
+
+```text
 docs/troubleshooting.md
 ```
 
@@ -944,7 +950,7 @@ alta disponibilidade
 pipeline CI/CD
 ```
 
-O TinyDB é adequado para protótipo, demonstração e baixo volume. Para produção, considere bancos como PostgreSQL, TimescaleDB, InfluxDB, SQLite com schema definido ou DuckDB/Parquet para análises locais.
+O TinyDB é adequado para protótipo, demonstração e baixo volume. Para produção, o ideal é considerar bancos mais robustos como PostgreSQL, TimescaleDB, InfluxDB, SQLite com schema definido ou DuckDB/Parquet para análises locais.
 
 ---
 
